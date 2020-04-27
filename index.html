@@ -50,13 +50,6 @@
 		scene.add(fillLight);
 		scene.add(backLight);
 
-		document.body.addEventListener("load", myFunction);
-
-		function myFunction(){
-			if (count > 14){
-
-			} else {
-
 				let mtlLoader = new THREE.MTLLoader();
 				mtlLoader.setTexturePath('');
 				mtlLoader.setPath('');
@@ -72,8 +65,6 @@
 						count ++;
 					})
 				})
-			}
-		}
 
 		let animate = function () {
 			requestAnimationFrame( animate );
