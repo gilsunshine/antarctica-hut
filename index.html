@@ -50,27 +50,6 @@
 		scene.add(fillLight);
 		scene.add(backLight);
 
-		let shackLoader = new THREE.MTLLoader();
-		shackLoader.setTexturePath('');
-		shackLoader.setPath('');
-		shackLoader.load('shackleton.mtl', function(materials){
-		materials.side = 2;
-		materials.transparent = true;
-		materials.preload();
-
-			let shackObjLoader = new THREE.OBJLoader();
-			shackObjLoader.setMaterials(materials);
-			shackObjLoader.setPath('');
-			shackObjLoader.load('shackleton.obj', function(object){
-				let shack = object.children[0]
-			 shack.material.transparent = true;
-			 shack.material.depthTest = false;
-			 shack.material.side = THREE.DoubleSide;
-				scene.add(object);
-			})
-		})
-
-
 		document.body.addEventListener("dblclick", myFunction);
 
 		function myFunction(){
@@ -81,13 +60,13 @@
 				let mtlLoader = new THREE.MTLLoader();
 				mtlLoader.setTexturePath('');
 				mtlLoader.setPath('');
-				mtlLoader.load(count.toString() + '.mtl', function(materials){
+				mtlLoader.load('hut.mtl', function(materials){
 				materials.preload();
 
 					let objLoader = new THREE.OBJLoader();
 					objLoader.setMaterials(materials);
 					objLoader.setPath('');
-					objLoader.load(count.toString() + '.obj', function(object){
+					objLoader.load('hut.obj', function(object){
 
 						scene.add(object);
 						count ++;
